@@ -392,14 +392,20 @@ def interactive_explorer(x1, x2_value, x3):
 
     plt.xlabel(r'Time (sec)')
     plt.ylabel(r'Temperature ($\degree$C)')
+    
+    plt.text(113,21.56,r"|$A_A-A_B$|"+f"= {diff_value:.6f}",\
+            fontsize=14)
+    plt.text(113,21.52,f'         $\\Delta T$= {potential_delta_T:.6f}$°C$',\
+            fontsize=14)
+            
     plt.legend(loc='center left', bbox_to_anchor=(1.05, 0.5))
     plt.grid(True)
     plt.xlim(70,150)
     plt.show()
 
     # Display the calculated values
-    print(f"Difference ({x2_value:.2f}): {diff_value:.6f}")
-    print(f"ΔT at x2=tmix ({x2_value:.2f}): {potential_delta_T:.6f} °C")
+    #print(f"Difference ({x2_value:.2f}): {diff_value:.6f}")
+    #print(f"ΔT at x2=tmix ({x2_value:.2f}): {potential_delta_T:.6f} °C")
 
 
 # Get the min and max time from the trial1 DataFrame

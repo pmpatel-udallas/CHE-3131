@@ -397,6 +397,9 @@ def interactive_explorer(x1, x2_value, x3):
     plt.vlines(x2_value,line(x2_value,Ti1.slope,Ti1.intercept),line(x2_value,Tf1.slope,Tf1.intercept),'k',\
     linestyle='dashed',label=r'$\Delta T$')
 
+    plt.text(113,21.56,r"|$T_{63R}-T(x_2)$|"+f"= {diff_value:.6f}",fontsize=12)
+    plt.text(113,21.52,f'                $\\Delta T$= {potential_delta_T:.6f}$°C$',fontsize=12)
+    
     plt.xlabel('Time (sec)')
     plt.ylabel(r'Temperature ($\degree$C)')
     plt.legend(loc='center left', bbox_to_anchor=(1.05, 0.5))
@@ -405,12 +408,12 @@ def interactive_explorer(x1, x2_value, x3):
     plt.show()
 
     # Display the calculated values
-    print(f"Difference ({x2_value:.2f}): {diff_value:.6f}")
-    print(f"ΔT at x2=tmix ({x2_value:.2f}): {potential_delta_T:.6f} °C")
+    #print(f"Difference ({x2_value:.2f}): {diff_value:.6f}")
+    #print(f"ΔT at x2=tmix ({x2_value:.2f}): {potential_delta_T:.6f} °C")
 
 # Get the min and max time from the trial1 DataFrame
-min_time = time.min()
-max_time = time.max()
+min_time =80
+max_time = 150
 
 # Create sliders for x1, x2, and x3 with bounds based on data range
 x1_slider = widgets.FloatSlider(
